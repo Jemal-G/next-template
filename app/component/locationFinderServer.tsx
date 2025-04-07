@@ -1,13 +1,26 @@
-
 export default async function LocationFinderServer() {
-  const response = await fetch("https://geolocation-db.com/json/", {
-    cache: "no-store", 
-  });
+  try {
+    // Hardcoded city, state, and temperature
+    const city = "San Francisco";
+    const state = "California";
+    const temperature = 22; // Hardcoded temperature in °C
 
-  const locationInfo = await response.json();
-  console.log("location data:",locationInfo);
-
-  return (
-    <h1>Hello from {locationInfo.city || "my location"} from server component</h1>
-  );
+    return (
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <h3>Hello From server component</h3>
+        <p>{city}</p>
+        <p>{temperature}°C</p>
+        <p>{state}</p>
+      </div>
+    );
+  } catch (error) {
+    console.error("Failed to fetch location data:", error);
+    return (
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <p>Unknown City</p>
+        <p>Unknown Temperature</p>
+        <p>Unknown State</p>
+      </div>
+    );
+  }
 }

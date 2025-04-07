@@ -12,6 +12,15 @@
       "$amplify/*": [
         "../.amplify/generated/*"
       ]
-    }
-  }
+    },
+    "types": ["node", "prop-types"] 
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }

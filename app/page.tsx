@@ -6,8 +6,10 @@ import DOING from "./component/doing";
 export default function App() {
   return (
     <main className="App">
-      <LocationFinderClient />
-      <LocationFinderServer />
+      <div className="location-container">
+        <LocationFinderServer />
+        <LocationFinderClient />
+      </div>
       <DOING />
     </main>
   );
